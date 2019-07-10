@@ -1,4 +1,6 @@
-const worker = new Worker('worker.js')
+if (typeof(Worker) !== "undefined") {  
+    const worker = new Worker("worker.js");
+}  
 
 worker.addEventListener('message', ({ data }) => {
   if (data.action == 'count2') {
