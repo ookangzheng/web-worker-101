@@ -1,6 +1,6 @@
 const worker = new Worker('worker.js')
 
-worker.addEventListener('message', ({ data, time }) => {
+worker.addEventListener('message', ({ data }) => {
   if (data.action == 'count2') {
     alert(
       `From web worker: We're done without blocking the UI time: ${data.time}`
